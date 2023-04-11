@@ -4,7 +4,7 @@
 
 ## Descrição 
 
-Esse projeto teve como objetivo entender e compreender como funciona o uso e desenvolvimento de um KeyLogger (é um tipo de software malicioso (malware) que é projetado para registrar todas as teclas digitadas em um computador) para o Sistema Operacional Windowns utilizando diversas maneiras de filtros de caracteres para atribuir a um log.txt. Lembrando que este projeto foi desenvolvido somente para estudo e compreenção do ataque utilizado em diversos Cibercrimes.
+Esse projeto teve como objetivo entender e compreender como funciona o uso e desenvolvimento de um KeyLogger (é um tipo de software malicioso (malware) que é projetado para registrar todas as teclas digitadas em um computador) para o Sistema Operacional Windowns utilizando diversas maneiras de filtros de caracteres para atribuir a um log.txt. Lembrando que este projeto foi desenvolvido somente para fins de estudo e compreenção do ataque utilizado em diversos Cibercrimes.
 
 ## 🛠️ Abrir e rodar o projeto
 ### Instalação
