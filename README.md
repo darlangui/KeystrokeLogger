@@ -25,7 +25,6 @@ Esse projeto teve como objetivo entender e compreender como funciona o uso e des
     ```
     python keylogger.py
     ```
-2. Isso iniciará o servidor localmente em http://localhost:5000.
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
